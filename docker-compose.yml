@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  mediawiki:
+    container_name: mediawiki
+    image: orchitech/mediawiki
+    build: .
+    ports:
+      - 8080:80
+    environment:
+      MEDIAWIKI_ADMIN_USER: admin
+      MEDIAWIKI_ADMIN_PASS: adminadminadmin
+      MEDIAWIKI_SITE_LANG: en
+      MEDIAWIKI_SITE_NAME: My Wiki
+    volumes:
+      - mediawiki-images:/var/www/html/images
+      - mediawiki-data:/var/www/html/data
+
+volumes:
+  mediawiki-images:
+  mediawiki-data:
