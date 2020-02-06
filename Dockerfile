@@ -1,5 +1,18 @@
 FROM php:7.3-apache
 
+ENV MEDIAWIKI_DB_NAME=mediawiki
+ENV MEDIAWIKI_DB_SCHEMA=mediawiki
+ENV MEDIAWIKI_DB_PORT=""
+ENV MEDIAWIKI_DB_HOST=localhost
+ENV MEDIAWIKI_DB_TYPE=sqlite
+ENV MEDIAWIKI_DB_USER=mediawiki
+ENV MEDIAWIKI_DB_PASSWORD=mediawiki
+ENV MEDIAWIKI_SITE_SERVER=http://localhost:8080
+ENV MEDIAWIKI_SITE_LANG=en
+ENV MEDIAWIKI_ADMIN_USER=admin
+ENV MEDIAWIKI_ADMIN_PASS=admin
+ENV MEDIAWIKI_SITE_NAME="My Wiki"
+
 # System dependencies
 RUN set -eux; \
 	\
@@ -90,3 +103,6 @@ RUN set -eux; \
 	tar -x --strip-components=1 -f mediawiki.tar.gz; \
 	rm mediawiki.tar.gz; \
 	chown -R www-data:www-data extensions skins cache images
+
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
