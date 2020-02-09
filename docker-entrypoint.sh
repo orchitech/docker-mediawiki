@@ -34,6 +34,7 @@ generate_settings()
   fi
 }
 
+mkdir -p /var/www/html/{data,images}
 chown www-data /var/www/html/{data,images}
 
 export -f generate_settings

@@ -12,8 +12,6 @@ others.
 docker run --name some-mediawiki -p 8080:80 -e MEDIAWIKI_SITE_NAME="MediaWiki" -e MEDIAWIKI_ADMIN_USER=admin -e MEDIAWIKI_ADMIN_PASS=adminpassword orchitech/mediawiki
 ```
 
-Having troubling accessing your MediaWiki server? See `Accessing MediaWiki` below for help.
-
 ## Extra configuration options
 
 Use the following environmental variables to generate a `LocalSettings.php` and perform automatic installation of MediaWiki. If you don't include these, you'll need to go through the installation wizard. See `Installation Wizard` below for more details. Please see [Manual:Configuration_settings](https://www.mediawiki.org/wiki/Manual:Configuration_settings) for details about what these configuration variables do.
