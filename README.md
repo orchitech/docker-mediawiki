@@ -9,7 +9,7 @@ others.
 # How to use this image
 
 ```
-docker run --name some-mediawiki -p 8080:80 -e MEDIAWIKI_SITE_NAME="MediaWiki" -e MEDIAWIKI_ADMIN_USER=admin -e MEDIAWIKI_ADMIN_PASS=adminpassword orchitech/mediawiki
+docker run --name some-mediawiki -d -p 8080:80 -e MEDIAWIKI_SITE_NAME="MediaWiki" -e MEDIAWIKI_ADMIN_USER=admin -e MEDIAWIKI_ADMIN_PASS=adminpassword orchitech/mediawiki
 ```
 
 ## Extra configuration options
@@ -44,7 +44,7 @@ it.
 To use with an external database server, use `MEDIAWIKI_DB_HOST` (along with
 `MEDIAWIKI_DB_USER` and `MEDIAWIKI_DB_PASSWORD` if necessary):
 
-    docker run --name some-mediawiki \
+    docker run --name some-mediawiki -d \
         -e MEDIAWIKI_DB_HOST=10.0.0.1
         -e MEDIAWIKI_DB_PORT=3306 \
         -e MEDIAWIKI_DB_USER=app \
